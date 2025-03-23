@@ -1,19 +1,4 @@
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-
 plugins {
-    alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.kotlin.android) apply false
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+    id("com.android.application") version "8.9.0" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.0" apply false
 }

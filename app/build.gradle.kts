@@ -1,12 +1,13 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.ksp)
+    id("com.android.application") version "8.9.0"
+    id("org.jetbrains.kotlin.android") version "1.9.0"
+    id("com.google.devtools.ksp") version "1.9.0-1.0.13"  // Обновлено для Kotlin 1.9.0
 }
 
 android {
     namespace = "com.example.comexampleaiwakeup"
     compileSdk = 35
+    buildToolsVersion = "35.0.0"
 
     defaultConfig {
         applicationId = "com.example.comexampleaiwakeup"
@@ -55,13 +56,14 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.androidx.material3)
 
     // AppCompat и Material
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
 
     // TensorFlow Lite
-    implementation("org.tensorflow:tensorflow-lite:2.12.0")
+    implementation("org.tensorflow:tensorflow-lite:2.14.0")
     implementation("org.tensorflow:tensorflow-lite-support:0.4.4")
 
     // OpenWeatherMap (OkHttp и Gson)
